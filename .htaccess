@@ -1,0 +1,27 @@
+RewriteEngine On
+
+# --- 1. Редиректы с URL с расширениями (.php и .html) на URL без расширения ---
+
+# Редирект с .php на URL без расширения
+RewriteCond %{THE_REQUEST} \s/([^\s]+)\.php[?\s] [NC]
+RewriteRule ^([^.]+)\.php$ /$1 [R=301,L]
+
+# Редирект с .html на URL без расширения
+RewriteCond %{THE_REQUEST} \s/([^\s]+)\.html[?\s] [NC]
+RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
+
+# --- 2. Внутреннее перенаправление "чистого" URL на реальный файл ---
+
+# Если запрошенный URL не является файлом или директорией
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Если существует файл с расширением .php, отдаем его
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L]
+
+# Если существует файл с расширением .html, отдаем его
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+ErrorDocument 404 /error404
