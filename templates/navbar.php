@@ -196,8 +196,6 @@
                     </div>
                 </div>
 
-
-
                 <div class="side-nav-link-list">
                     <div class="link-underline-hover"><a href="/public-offer" class="text-body text-bold">Публичная
                             оферта (все правила)</a>

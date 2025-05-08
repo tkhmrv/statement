@@ -119,7 +119,7 @@
 <body>
 
   <?php include 'templates/navbar.php'; ?>
-
+  
   <section class="section hero-home-a">
     <div class="w-layout-blockcontainer main-container w-container">
       <div class="w-layout-grid hero-thirds">

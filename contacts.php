@@ -68,6 +68,8 @@
   <!-- Libs, scripts and css -->
   <link href="/css/main-styles.css" rel="stylesheet" type="text/css">
 
+  <script src="https://unpkg.com/inputmask/dist/inputmask.min.js"></script>
+
   <script type="text/javascript">
     ! function (o, c) {
       var n = c.documentElement,
@@ -81,6 +83,8 @@
 <body>
 
   <?php include 'templates/navbar.php'; ?>
+
+  <?php include 'templates/toast.php'; ?>
 
   <section class="section hero-contact">
     <div class="w-layout-blockcontainer main-container w-container">
@@ -201,8 +205,8 @@
 
             <div class="contact-info-tile">
               <div class="label text-dark-64">(Как нас найти?)</div>
-              <div class="link-underline-hover"><a href="https://vk.com/album-211210178_290580309"
-                  target="_blank" class="text-big">Ссылка на альбом в ВК с инструкциями</a>
+              <div class="link-underline-hover"><a href="https://vk.com/album-211210178_290580309" target="_blank"
+                  class="text-big">Ссылка на альбом в ВК с инструкциями</a>
                 <div class="link-under-line">
                   <div class="link-under-line-filled"></div>
                 </div>
@@ -214,65 +218,58 @@
 
         <div id="w-node-c6e35a31-fec2-c14b-2c9f-3bc5d2187d6f-43f76668" class="form-contact w-form form-margin">
           <!-- <h3 style="margin-bottom: 3vh;">Форма обратной связи</h3> -->
-          <form id="wf-form-Email-Form" name="wf-form-Email-Form" data-name="Email Form" method="get"
-            class="contact-form" data-wf-page-id="6775a4946057800443f76668"
-            data-wf-element-id="c6e35a31-fec2-c14b-2c9f-3bc5d2187d70">
+
+          <form id="feedback-form" name="feedback-form" data-name="feedback-form" method="post" class="contact-form">
+
             <div class="w-layout-grid input-halves contact-input-halves">
               <div class="contact-input-wrap">
-                <div class="label">Имя*</div><input class="text-field w-input" maxlength="256" name="Name"
-                  data-name="Name" placeholder="Ваше имя" type="text" id="Name-5">
+
+                <div class="label">Имя</div>
+                <input class="text-field w-input" type="text" autocomplete="on" name="name" minlength="3"
+                  maxlength="100" required pattern="^[A-Za-zА-Яа-яЁё\s]*$" id="name" data-name="name"
+                  placeholder="Ваше имя">
+
               </div>
               <div class="contact-input-wrap">
-                <div class="label">Мессенджер для связи</div><select id="field" name="field" data-name="Field"
-                  class="text-field select-field w-select">
-                  <option value="">Выберите из списка...</option>
-                  <option value="First">Telegram</option>
-                  <option value="Second">WhatsApp</option>
-                  <option value="Third">ВК</option>
+
+                <div class="label">Мессенджер для связи</div>
+                <select id="field" name="field" data-name="field" required class="text-field select-field w-select">
+                  <option value="1">Telegram</option>
+                  <option value="2">WhatsApp</option>
                 </select>
-              </div>
-            </div>
-            <!-- <div class="w-layout-grid input-halves contact-input-halves">
-              <div class="contact-input-wrap">
-                <div class="label">Мессенджер для связи</div><input class="text-field w-input" maxlength="256" name="Email"
-                  data-name="Email" placeholder="Telegram" type="email" id="Email-4" required="">
-              </div>
 
-              
-              
-              <div class="contact-input-wrap">
-                <div class="label">Ваше имя пользователя</div><input class="text-field w-input" maxlength="256" name="Company"
-                  data-name="Company" placeholder="statement_st" type="text" id="Company">
               </div>
-            </div> -->
-
-            <div class="contact-input-wrap">
-              <div class="label">Телефон*</div><input class="text-field w-input" maxlength="256" name="Phone-Number"
-                data-name="Phone Number" placeholder="+7 (999) 123 45 67" type="tel" id="Phone-Number">
             </div>
 
             <div class="contact-input-wrap">
-              <div class="label">Тема обращения*</div><input class="text-field w-input" maxlength="256" name="Topic"
-                data-name="Topic" placeholder="Вопрос/жалоба/предложение" id="Topic" required="">
+
+              <div class="label">Телефон</div>
+              <input class="text-field w-input" type="tel" name="phone" required data-name="phone"
+                placeholder="+7 (999) 123-45-67" id="phone">
+
             </div>
 
-            <!-- <div class="contact-input-wrap">
-              <div class="label">What’s your project budget?</div><select id="field" name="field" data-name="Field"
-                class="text-field select-field w-select">
-                <option value="">Select one...</option>
-                <option value="First">$1k</option>
-                <option value="Second">$5k</option>
-                <option value="Third">$10k-$20k</option>
-              </select>
-            </div> -->
             <div class="contact-input-wrap">
-              <div class="label">Сообщение*</div><textarea id="Message-3" name="Message" maxlength="5000"
-                data-name="Message" placeholder="Поделитесь вашими мыслями"
+
+              <div class="label">Тема обращения</div>
+              <input class="text-field w-input" type="text" name="topic" minlength="3" maxlength="100" data-name="topic"
+                pattern="^[A-Za-zА-Яа-яЁё\s]*$" placeholder="Вопрос/жалоба/предложение" id="topic" required>
+
+            </div>
+
+            <div class="contact-input-wrap">
+
+              <div class="label">Сообщение</div>
+              <textarea id="message" name="message" maxlength="500" required data-name="message"
+                placeholder="Поделитесь вашими мыслями (не более 500 символов)"
                 class="text-field text-area w-input"></textarea>
+
             </div>
-            <div class="contact-submit-wrap"><input type="submit" data-wait="Пожалуйста подождите..."
-                class="cta-main w-button" value="Отправить сообщение"></div>
+            <div class="contact-submit-wrap">
+              <input type="submit" data-wait="Пожалуйста подождите..." class="cta-main w-button" value="Отправить">
+            </div>
           </form>
+
           <div class="success-message w-form-done">
             <div>Спасибо! Ваше обращение принято!
             </div>
@@ -280,6 +277,7 @@
           <div class="error-message w-form-fail">
             <div>Упс, что-то пошло не так при отправке формы!</div>
           </div>
+
         </div>
       </div>
     </div>
@@ -290,6 +288,9 @@
   <script src="/js/jquery-3.5.1.min.js" type="text/javascript" crossorigin="anonymous"></script>
   <script src="/js/untouched.js" type="text/javascript"></script>
   <script src="/js/custom.js" type="text/javascript"></script>
+  <script>
+    Inputmask("+7 (999) 999-99-99").mask("#phone");
+  </script>
 
 </body>
 
