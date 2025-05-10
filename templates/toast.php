@@ -1,9 +1,5 @@
-<!-- <div class="cta-fixed w-inline-block">
-    <img src="/images/check.webp" loading="lazy" alt="" class="icon-cta-fixed">
-    <div class="text-body semibold">Изменения сохранены!</div>
-</div>
 
-<div class="cta-fixed w-inline-block">
-    <img src="/images/cross.webp" loading="lazy" alt="" class="icon-cta-fixed">
-    <div class="text-body semibold">Возникла ошибка :(</div>
-</div> -->
+<div class="toast-cookie-fixed w-inline-block toasts-only">
+    <img src="" loading="lazy" class="icon-toast-fixed toast-icon">
+    <div class="text-body semibold toasts-only-text-body"></div>
+</div>

@@ -68,17 +68,14 @@
   <!-- Libs, scripts and css -->
   <link href="/css/main-styles.css" rel="stylesheet" type="text/css">
 
-  <script type="text/javascript">
-    ! function (o, c) {
-      var n = c.documentElement,
-        t = " w-mod-";
-      n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
-    }(window, document);
-  </script>
+  <?php include 'templates/w-mod.php'; ?>
 
 </head>
 
 <body>
+
+  <?php include 'templates/notification.php'; ?>
+  <?php include 'templates/cookie.php'; ?>
 
   <?php include 'templates/navbar.php'; ?>
 
@@ -108,7 +105,7 @@
               srcset="/images/ami/ami-4.jpeg 500w, /images/ami/ami-4.jpeg 800w, /images/ami/ami-4.jpeg 1344w" alt=""
               src="/images/ami/ami-4.jpeg" loading="lazy" class="image-cover" style="object-position: 50% 50%;"></div>
         </div>
-                <!-- <div class="hide">
+        <!-- <div class="hide">
           <div data-w-id="ffb44e47-c8b8-ff57-2a89-ed065bd149b9"
             style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
             class="text-h1">была</div>
@@ -130,8 +127,8 @@
         </div>
         <div data-w-id="0b7c0f27-fbdb-8803-5ea5-85cb6d93855d" style="width:0vw" class="about-text-image">
           <div class="about-small-image-wrap"><img sizes="11vw"
-              srcset="/images/founder.jpg 500w, /images/founder.jpg 800w, /images/founder.jpg 1344w"
-              alt="" src="/images/founder.jpg" loading="lazy" class="image-cover" style="object-position: 50% 37%;">
+              srcset="/images/founder.jpg 500w, /images/founder.jpg 800w, /images/founder.jpg 1344w" alt=""
+              src="/images/founder.jpg" loading="lazy" class="image-cover" style="object-position: 50% 37%;">
           </div>
         </div>
         <div class="hide">
@@ -221,13 +218,15 @@
     <div class="w-layout-blockcontainer main-container w-container">
       <div class="w-layout-grid story-halves bottom-aligned">
         <div data-w-id="7693fa5c-e19c-0c32-b3d5-f8d7879ea15b" class="story-image-wrap"><img sizes="100vw"
-            srcset="/images/mist/mist-9.jpg 500w, /images/mist/mist-9.jpg 800w, /images/mist/mist-9.jpg 1361w"
-            alt="" src="/images/mist/mist-9.jpg" loading="lazy" class="image-cover parallax" style="object-position: 50% 70%;">
+            srcset="/images/mist/mist-9.jpg 500w, /images/mist/mist-9.jpg 800w, /images/mist/mist-9.jpg 1361w" alt=""
+            src="/images/mist/mist-9.jpg" loading="lazy" class="image-cover parallax" style="object-position: 50% 70%;">
           <div style="height:100%" class="mask-image"></div>
         </div>
         <div class="story-right">
           <div class="story-text">
-            <p class="text-big">Сейчас студия имеет две локации и&nbsp;7 залов под самые различные съемки. Все&nbsp;залы разные по&nbsp;размерам — от&nbsp;30м² до&nbsp;100м², поэтому легко выбрать подходящий.<br><br>Помимо фотосессий, пространства можно арендовать и&nbsp;под другие мероприятия.
+            <p class="text-big">Сейчас студия имеет две локации и&nbsp;7 залов под самые различные съемки. Все&nbsp;залы
+              разные по&nbsp;размерам — от&nbsp;30м² до&nbsp;100м², поэтому легко выбрать подходящий.<br><br>Помимо
+              фотосессий, пространства можно арендовать и&nbsp;под другие мероприятия.
             </p>
           </div>
         </div>
@@ -294,7 +293,8 @@
               <div class="label">(01)</div>
               <h3 class="no-margins">Сменная обувь</h3>
             </div>
-            <p class="text-big">Нахождение в&nbsp;залах возможно только в&nbsp;тапочках, босиком или в&nbsp;сменной заклеенной обуви. Таким образом мы&nbsp;сохраняем чистоту для&nbsp;всех посетителей.
+            <p class="text-big">Нахождение в&nbsp;залах возможно только в&nbsp;тапочках, босиком или в&nbsp;сменной
+              заклеенной обуви. Таким образом мы&nbsp;сохраняем чистоту для&nbsp;всех посетителей.
             </p>
           </div>
           <div class="value-card">
@@ -302,28 +302,32 @@
               <div class="label">(02)</div>
               <h3 class="no-margins">Время аренды</h3>
             </div>
-            <p class="text-big">Арендный час равен 55&nbsp;минут. Сервисные 5&nbsp;минут помогают пользоваться залами точно по&nbsp;времени и&nbsp;ценить время других посетителей.</p>
+            <p class="text-big">Арендный час равен 55&nbsp;минут. Сервисные 5&nbsp;минут помогают пользоваться залами
+              точно по&nbsp;времени и&nbsp;ценить время других посетителей.</p>
           </div>
           <div class="value-card">
             <div class="value-card-top-tile">
               <div class="label">(03)</div>
               <h3 class="no-margins">Предоплата</h3>
             </div>
-            <p class="text-big">Фотостудия работает по&nbsp;частичной предоплате. Она обязательно должна быть внесена в&nbsp;течении нескольких часов после онлайн-записи.</p>
+            <p class="text-big">Фотостудия работает по&nbsp;частичной предоплате. Она обязательно должна быть внесена
+              в&nbsp;течении нескольких часов после онлайн-записи.</p>
           </div>
           <div class="value-card">
             <div class="value-card-top-tile">
               <div class="label">(04)</div>
               <h3 class="no-margins">Отмена бронирования</h3>
             </div>
-            <p class="text-big">При&nbsp;отмене бронирования менее чем за&nbsp;72 часа до&nbsp;времени посещения, предоплата не&nbsp;возвращается. В&nbsp;день посещения отмена возможна только по&nbsp;100% предоплате.</p>
+            <p class="text-big">При&nbsp;отмене бронирования менее чем за&nbsp;72 часа до&nbsp;времени посещения,
+              предоплата не&nbsp;возвращается. В&nbsp;день посещения отмена возможна только по&nbsp;100% предоплате.</p>
           </div>
           <div class="value-card">
             <div class="value-card-top-tile">
               <div class="label">(05)</div>
               <h3 class="no-margins">Ущерб фотостудии</h3>
             </div>
-            <p class="text-big">При&nbsp;нанесении фотостудии материального ущерба, арендатор обязан возместить полную стоимость ущерба на&nbsp;месте.</p>
+            <p class="text-big">При&nbsp;нанесении фотостудии материального ущерба, арендатор обязан возместить полную
+              стоимость ущерба на&nbsp;месте.</p>
           </div>
         </div>
       </div>
@@ -337,7 +341,8 @@
           <div class="hide">
             <h2 data-w-id="39153121-39ba-c21a-8bbf-1ba19ba69c7d"
               style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
-              class="no-margins">“За&nbsp;всей красотой студии statement™ стоят люди. Это&nbsp;целая команда, которая делает студию такой, какая она есть.”</h2>
+              class="no-margins">“За&nbsp;всей красотой студии statement™ стоят люди. Это&nbsp;целая команда, которая
+              делает студию такой, какая она есть.”</h2>
           </div>
         </div>
       </div>

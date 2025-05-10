@@ -68,28 +68,29 @@
   <!-- Libs, scripts and css -->
   <link href="/css/main-styles.css" rel="stylesheet" type="text/css">
 
-  <script type="text/javascript">
-    ! function (o, c) {
-      var n = c.documentElement,
-        t = " w-mod-";
-      n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
-    }(window, document);
-  </script>
+  <?php include 'templates/w-mod.php'; ?>
 
 </head>
 
 <body>
+
+  <?php include 'templates/notification.php'; ?>
+  <?php include 'templates/cookie.php'; ?>
 
   <?php include 'templates/navbar.php'; ?>
 
   <section class="section hero-about-c">
     <div class="w-layout-blockcontainer main-container w-container">
       <div class="about-c-hero-master">
-        <div data-w-id="e0c879aa-2eb2-fa46-9e3b-a2af1f518ded" class="about-c-left-image"><img loading="lazy" src="/images/677a518cf567a08f9b87e876_About%20Left.avif" alt="" class="image-cover parallax">
+        <div data-w-id="e0c879aa-2eb2-fa46-9e3b-a2af1f518ded" class="about-c-left-image"><img loading="lazy"
+            src="/images/677a518cf567a08f9b87e876_About%20Left.avif" alt="" class="image-cover parallax">
           <div style="height:100%" class="mask-image"></div>
         </div>
         <div class="about-c-right-block">
-          <div data-w-id="b1c804f4-213c-9707-74d3-5a202dd16249" class="about-c-right-image"><img sizes="(max-width: 479px) 100vw, (max-width: 767px) 45vw, 31vw" srcset="/images/6779942932efbfd3216dce66_Kitchen-p-500.avif 500w, /images/6779942932efbfd3216dce66_Kitchen-p-800.avif 800w, /images/6779942932efbfd3216dce66_Kitchen.avif 1361w" alt="" src="/images/6779942932efbfd3216dce66_Kitchen.avif" loading="lazy" class="image-cover parallax">
+          <div data-w-id="b1c804f4-213c-9707-74d3-5a202dd16249" class="about-c-right-image"><img
+              sizes="(max-width: 479px) 100vw, (max-width: 767px) 45vw, 31vw"
+              srcset="/images/6779942932efbfd3216dce66_Kitchen-p-500.avif 500w, /images/6779942932efbfd3216dce66_Kitchen-p-800.avif 800w, /images/6779942932efbfd3216dce66_Kitchen.avif 1361w"
+              alt="" src="/images/6779942932efbfd3216dce66_Kitchen.avif" loading="lazy" class="image-cover parallax">
             <div style="height:100%" class="mask-image"></div>
           </div>
           <div class="label">(Новостной пост)</div>
@@ -101,31 +102,49 @@
     <div class="w-layout-blockcontainer main-container w-container">
       <div class="heading-about-c">
         <div class="hide">
-          <div data-w-id="6d2a4cd8-284e-5596-59e8-0e7e8bf11d8e" style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-h1">Born</div>
+          <div data-w-id="6d2a4cd8-284e-5596-59e8-0e7e8bf11d8e"
+            style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            class="text-h1">Born</div>
         </div>
         <div class="hide">
-          <div data-w-id="991ce8f3-9f13-8aca-c9ec-945827e25719" style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-h1">from</div>
+          <div data-w-id="991ce8f3-9f13-8aca-c9ec-945827e25719"
+            style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            class="text-h1">from</div>
         </div>
         <div class="hide">
-          <div data-w-id="79461370-81c3-0072-7211-2fed6a634e43" style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-h1">a</div>
+          <div data-w-id="79461370-81c3-0072-7211-2fed6a634e43"
+            style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            class="text-h1">a</div>
         </div>
         <div class="hide">
-          <div data-w-id="b2a73ece-2d08-2bf5-1553-68c028826b58" style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-h1">shared</div>
+          <div data-w-id="b2a73ece-2d08-2bf5-1553-68c028826b58"
+            style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            class="text-h1">shared</div>
         </div>
         <div class="hide">
-          <div data-w-id="d0c0e7f4-4b19-a4df-aae1-280d2fc49cf0" style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-h1">passion</div>
+          <div data-w-id="d0c0e7f4-4b19-a4df-aae1-280d2fc49cf0"
+            style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            class="text-h1">passion</div>
         </div>
         <div class="hide">
-          <div data-w-id="f5c7ece1-5db5-fc33-18b4-970abe05ad16" style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-h1">for</div>
+          <div data-w-id="f5c7ece1-5db5-fc33-18b4-970abe05ad16"
+            style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            class="text-h1">for</div>
         </div>
         <div class="hide">
-          <div data-w-id="7e5590e7-4e9d-a765-b673-8a14494bf38b" style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-h1">clean,</div>
+          <div data-w-id="7e5590e7-4e9d-a765-b673-8a14494bf38b"
+            style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            class="text-h1">clean,</div>
         </div>
         <div class="hide">
-          <div data-w-id="285ab2eb-7876-dc0d-27a2-408fcea72dcb" style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-h1">functional</div>
+          <div data-w-id="285ab2eb-7876-dc0d-27a2-408fcea72dcb"
+            style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            class="text-h1">functional</div>
         </div>
         <div class="hide">
-          <div data-w-id="667ebe7f-199a-271f-2a83-396bb157f804" style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="text-h1">design.</div>
+          <div data-w-id="667ebe7f-199a-271f-2a83-396bb157f804"
+            style="-webkit-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 200%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            class="text-h1">design.</div>
         </div>
       </div>
     </div>
@@ -133,12 +152,23 @@
   <section class="section">
     <div class="w-layout-blockcontainer main-container w-container">
       <div class="w-layout-grid about-c-team-halves">
-        <div data-w-id="2ec4ccbf-661b-cb2e-4754-01575ed1910f" class="about-c-team-image"><img sizes="(max-width: 479px) 100vw, 40vw" srcset="/images/677980a32927787791c11214_Team%20Image-1-p-500.avif 500w, /images/677980a32927787791c11214_Team%20Image-1-p-800.avif 800w, /images/677980a32927787791c11214_Team%20Image-1.avif 1344w" alt="" src="/images/677980a32927787791c11214_Team%20Image-1.avif" loading="lazy" class="image-cover parallax">
+        <div data-w-id="2ec4ccbf-661b-cb2e-4754-01575ed1910f" class="about-c-team-image"><img
+            sizes="(max-width: 479px) 100vw, 40vw"
+            srcset="/images/677980a32927787791c11214_Team%20Image-1-p-500.avif 500w, /images/677980a32927787791c11214_Team%20Image-1-p-800.avif 800w, /images/677980a32927787791c11214_Team%20Image-1.avif 1344w"
+            alt="" src="/images/677980a32927787791c11214_Team%20Image-1.avif" loading="lazy"
+            class="image-cover parallax">
           <div style="height:100%" class="mask-image"></div>
         </div>
         <div class="team-info-right">
-          <h4 class="no-margins">Jessica’s eye for detail and Maria’s creative vision combined to craft a platform that celebrates bold ideas while remaining accessible to everyone.</h4>
-          <p class="text-big">Every great idea deserves a platform that elevates its potential. aiaiaiai is crafted to be that foundation, blending clean design with effortless usability. It’s not just about aesthetics—it’s about creating a seamless experience that lets your work take center stage.<br><br>With a focus on precision and adaptability, this template gives you the freedom to express your vision without distractions. Whether you’re showcasing a portfolio, building an agency site, or launching something new, every detail is designed to enhance your creativity.<br><br>The goal is simple: to provide a tool that empowers creators to push boundaries and connect with their audience in meaningful ways.</p>
+          <h4 class="no-margins">Jessica’s eye for detail and Maria’s creative vision combined to craft a platform that
+            celebrates bold ideas while remaining accessible to everyone.</h4>
+          <p class="text-big">Every great idea deserves a platform that elevates its potential. aiaiaiai is crafted to
+            be that foundation, blending clean design with effortless usability. It’s not just about aesthetics—it’s
+            about creating a seamless experience that lets your work take center stage.<br><br>With a focus on precision
+            and adaptability, this template gives you the freedom to express your vision without distractions. Whether
+            you’re showcasing a portfolio, building an agency site, or launching something new, every detail is designed
+            to enhance your creativity.<br><br>The goal is simple: to provide a tool that empowers creators to push
+            boundaries and connect with their audience in meaningful ways.</p>
 
           <!-- <p class="text-big">Together, they’ve redefined how creators and agencies can showcase their work, making aiaiaiai a go-to solution for minimalistic, impactful websites.</p> -->
         </div>
@@ -214,12 +244,12 @@
   </section> -->
 
   <section class="section cta-section">
-    <div data-poster-url="/images/vid.png" data-video-urls="/media/vid-2.mp4" data-autoplay data-loop
+    <div data-poster-url="/images/vid-2.png" data-video-urls="/media/vid-2.mp4" data-autoplay data-loop
       data-wf-ignore="true" class="cta-video w-background-video w-background-video-atom">
       <video id="index-cta-section-video" autoplay loop style="background-image: url('/images/vid.png');" muted
         playsinline data-wf-ignore="true">
         <source src="/media/vid-2.mp4" data-wf-ignore="true">
-        <!-- <source src="/media/vid.webm" data-wf-ignore="true"> -->
+        <source src="/media/vid-2.webm" data-wf-ignore="true">
       </video>
       <div class="w-layout-blockcontainer main-container w-container">
         <div class="cta-master">

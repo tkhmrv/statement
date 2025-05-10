@@ -68,13 +68,7 @@
   <!-- Libs, scripts and css -->
   <link href="/css/main-styles.css" rel="stylesheet" type="text/css">
 
-  <script type="text/javascript">
-    ! function (o, c) {
-      var n = c.documentElement,
-        t = " w-mod-";
-      n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
-    }(window, document);
-  </script>
+  <?php include 'templates/w-mod.php'; ?>
 
   <style>
     @media (min-width:992px) {
@@ -118,8 +112,11 @@
 
 <body>
 
+  <?php include 'templates/notification.php'; ?>
+  <?php include 'templates/cookie.php'; ?>
+
   <?php include 'templates/navbar.php'; ?>
-  
+
   <section class="section hero-home-a">
     <div class="w-layout-blockcontainer main-container w-container">
       <div class="w-layout-grid hero-thirds">
@@ -678,12 +675,12 @@
   </section>
 
   <section class="section cta-section">
-    <div data-poster-url="/images/vid.png" data-video-urls="/media/vid-2.mp4" data-autoplay data-loop
+    <div data-poster-url="/images/vid-2.png" data-video-urls="/media/vid-2.mp4" data-autoplay data-loop
       data-wf-ignore="true" class="cta-video w-background-video w-background-video-atom">
       <video id="index-cta-section-video" autoplay loop style="background-image: url('/images/vid.png');" muted
         playsinline data-wf-ignore="true">
         <source src="/media/vid-2.mp4" data-wf-ignore="true">
-        <!-- <source src="/media/vid.webm" data-wf-ignore="true"> -->
+        <source src="/media/vid-2.webm" data-wf-ignore="true">
       </video>
       <div class="w-layout-blockcontainer main-container w-container">
         <div class="cta-master">

@@ -1,31 +1,4 @@
 <section data-w-id="a126a8e5-ac09-3e0e-ae62-4426c5ff4adf" class="footer">
-    <style>
-        /* socials in footer */
-        @media (max-width: 991px) {
-            .footer-socials-custom {
-                margin-top: var(--scaling--24) !important;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .footer-socials-custom {
-                margin-top: var(--scaling--32) !important;
-            }
-        }
-
-        /* choose time footer */
-        @media (max-width: 767px) {
-            .footer-choose-time-regular {
-                display: none !important;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .footer-choose-time-underline {
-                display: none !important;
-            }
-        }
-    </style>
     <div class="w-layout-blockcontainer main-container w-container">
         <div class="w-layout-grid footer-grid">
             <div class="footer-menu">

@@ -2,3 +2,5 @@
 /vendor
 .DS_Store
 .env
+/logs/telegram.log
+/txt/env.txt

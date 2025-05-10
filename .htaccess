@@ -2,8 +2,9 @@ RewriteEngine On
 
 # --- 1. Редиректы с URL с расширениями (.php и .html) на URL без расширения ---
 
-# Редирект с .php на URL без расширения
+# Редирект с .php на URL без расширения (только если запрос не Ajax)
 RewriteCond %{THE_REQUEST} \s/([^\s]+)\.php[?\s] [NC]
+RewriteCond %{HTTP:X-Requested-With} !^XMLHttpRequest$
 RewriteRule ^([^.]+)\.php$ /$1 [R=301,L]
 
 # Редирект с .html на URL без расширения

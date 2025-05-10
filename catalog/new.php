@@ -91,30 +91,15 @@
 
   <!-- Libs, scripts and css -->
   <link href="/css/main-styles.css" rel="stylesheet" type="text/css">
-  <link href="/css/custom.css" rel="stylesheet" type="text/css">
 
-  <script type="text/javascript">
-    ! function (o, c) {
-      var n = c.documentElement,
-        t = " w-mod-";
-      n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
-    }(window, document);
-  </script>
-
-  <style>
-    @media (min-width:992px) {
-      html.w-mod-js:not(.w-mod-ix) [data-w-id="af41d69e-d0b8-850a-1371-aa6345254c51"] {
-        display: none;
-        opacity: 0;
-      }
-    }
-  </style>
+  <?php include '../templates/w-mod.php'; ?>
 
 </head>
 
 <body>
 
   <?php include '../templates/navbar.php'; ?>
+  <?php include '../templates/cookie.php'; ?>
 
   <section class="section hero-project">
     <div class="w-layout-blockcontainer main-container w-container">

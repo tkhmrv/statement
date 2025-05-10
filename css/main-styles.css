@@ -164,6 +164,10 @@ input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
+  height: 2vh;
+  width: 2vh;
+  accent-color: #121212;
+  margin-right: 1.2vh;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -618,18 +622,19 @@ textarea.w-select {
   height: auto;
 }
 
-.w-form-label {
+/* .w-form-label {
   cursor: pointer;
   margin-bottom: 0;
   font-weight: normal;
   display: inline-block;
-}
+} */
 
-.w-radio {
+/* .w-radio {
   margin-bottom: 5px;
   padding-left: 20px;
   display: block;
-}
+  accent-color: #121212;
+} */
 
 .w-radio:before,
 .w-radio:after {
@@ -642,11 +647,11 @@ textarea.w-select {
   clear: both;
 }
 
-.w-radio-input {
-  float: left;
-  margin: 3px 0 0 -20px;
+/* .w-radio-input {
+  float: inline-start;
+  margin: 0.3vw 0 0 -20px;
   line-height: normal;
-}
+} */
 
 .w-file-upload {
   margin-bottom: 10px;
@@ -9373,6 +9378,15 @@ figcaption {
   }
 }
 
+/* custom part */
+/* w-css-id part */
+@media (min-width:992px) {
+  html.w-mod-js:not(.w-mod-ix) [data-w-id="af41d69e-d0b8-850a-1371-aa6345254c51"] {
+    display: none;
+    opacity: 0;
+  }
+}
+
 /* book button info tile (every page in catalog) */
 @media (max-width: 767px) {
   .book-regular {
@@ -9399,13 +9413,51 @@ figcaption {
   }
 }
 
-/* custom part */
 /* speaks for itself */
 .project-main-image-full-height {
   height: 100% !important;
 }
 
-.cta-fixed {
+/* socials in footer */
+@media (max-width: 991px) {
+  .footer-socials-custom {
+      margin-top: var(--scaling--24) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-socials-custom {
+      margin-top: var(--scaling--32) !important;
+  }
+}
+
+/* choose time footer */
+@media (max-width: 767px) {
+  .footer-choose-time-regular {
+      display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-choose-time-underline {
+      display: none !important;
+  }
+}
+
+/* toasts and cookies */
+.cookies-only {
+  display: none;
+}
+
+.toasts-only {
+  display: none;
+}
+
+.notification-only {
+  display: none;
+}
+
+.toast-cookie-fixed {
   z-index: 999;
   padding: var(--scaling--16) var(--scaling--24);
   grid-column-gap: var(--scaling--8);
@@ -9414,22 +9466,51 @@ figcaption {
   background-color: var(--white\<deleted\|variable-75369ad5-5fd4-9139-b6e3-c0b27c5f1325\>);
   justify-content: flex-start;
   align-items: center;
-  display: flex;
   position: fixed;
   bottom: 2vw;
   right: 2vw;
   box-shadow: 0 15px 20px #02012014;
   max-width: 40vw !important;
+
+  animation: slideInUp 0.7s ease-out forwards;
+  transform-origin: bottom;
+  transition: transform 0.7s ease-out, opacity 0.7s ease-out;
 }
 
-.icon-cta-fixed {
+.toast-cookie-fixed.hiding {
+  animation: slideInDown 0.7s ease-in forwards;
+}
+
+@keyframes slideInUp {
+  from {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+      transform: translateY(0);
+      opacity: 1;
+  }
+  to {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+}
+
+.icon-toast-fixed {
   border-radius: var(--radius--xxsmall);
   width: var(--scaling--48);
   height: var(--scaling--48);
 }
 
 @media screen and (max-width: 991px) {
-  .cta-fixed {
+  .toast-cookie-fixed {
       padding: var(--scaling--16) var(--scaling--32);
       grid-column-gap: var(--scaling--16);
       grid-row-gap: var(--scaling--16);
@@ -9438,14 +9519,14 @@ figcaption {
       max-width: 50vh !important;
   }
 
-  .icon-cta-fixed {
+  .icon-toast-fixed {
       width: var(--scaling--80);
       height: var(--scaling--80);
   }
 }
 
 @media (max-width: 479px) {
-  .cta-fixed {
+  .toast-cookie-fixed {
       padding: var(--scaling--32) var(--scaling--64);
       grid-column-gap: var(--scaling--48);
       grid-row-gap: var(--scaling--32);
@@ -9453,9 +9534,110 @@ figcaption {
       max-width: 96vw !important;
   }
 
-  .icon-cta-fixed {
+  .icon-toast-fixed {
       width: var(--scaling--120);
       height: var(--scaling--120);
       text-align: left;
   }
+}
+
+/* contact form */
+.w-radio {
+  display: flex;
+  align-items: center; /* центрируем по вертикали */
+  /* gap: 0.8vh; */
+  margin-bottom: 5px;
+}
+
+.w-radio-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.w-form-label {
+  position: relative;
+  padding-left: 3.2vh; /* отступ под кастомный checkbox */
+  font-size: var(--text--text-body);
+  font-weight: normal;
+  line-height: 1.4;
+  color: #121212;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+/* Кастомный квадрат чекбокса */
+.w-form-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2vh;
+  width: 2vh;
+  height: 2vh;
+  background-color: #F4F4F4;
+  border: 1px solid #121212;
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Галочка */
+.w-radio-input:checked + .w-form-label::after {
+  content: "";
+  position: absolute;
+  left: 0.4vh;
+  top: 0.7vh;
+  width: 1vh;
+  height: 0.5vh;
+  border-left: 2px solid #121212;
+  border-bottom: 2px solid #121212;
+  transform: rotate(-45deg);
+  transition: all 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 767px) {
+  .w-form-label {
+    font-size: var(--scaling--48);
+  }
+
+  .w-form-label::before {
+    top: 0.09vh;
+  }
+}
+
+ /* Счетчик символов для textarea */
+ #message-counter {
+  position: relative;
+  height: 0;
+  width: 100%;
+}
+
+#char-count {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ABABAB;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  #char-count {
+    font-weight: 500;
+  }
+}
+
+textarea#message {
+  resize: vertical;
+  min-height: 120px;
+  box-sizing: border-box;
 }

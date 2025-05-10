@@ -69,22 +69,19 @@
   <link href="/css/main-styles.css" rel="stylesheet" type="text/css">
 
   <script src="https://unpkg.com/inputmask/dist/inputmask.min.js"></script>
+  <script src="/js/feedback-form.js" type="text/javascript"></script>
 
-  <script type="text/javascript">
-    ! function (o, c) {
-      var n = c.documentElement,
-        t = " w-mod-";
-      n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
-    }(window, document);
-  </script>
+  <?php include 'templates/w-mod.php'; ?>
 
 </head>
 
 <body>
 
-  <?php include 'templates/navbar.php'; ?>
-
+  <?php include 'templates/cookie.php'; ?>
   <?php include 'templates/toast.php'; ?>
+  <?php include 'templates/notification.php'; ?>
+
+  <?php include 'templates/navbar.php'; ?>
 
   <section class="section hero-contact">
     <div class="w-layout-blockcontainer main-container w-container">
@@ -102,33 +99,6 @@
           </div>
         </div>
       </div>
-
-      <style>
-        /* socials in footer */
-        @media (max-width: 991px) {
-          .footer-socials-custom {
-            margin-top: var(--scaling--24) !important;
-          }
-        }
-
-        @media (max-width: 767px) {
-          .footer-socials-custom {
-            margin-top: var(--scaling--32) !important;
-          }
-        }
-
-        @media (max-width: 991px) {
-          .form-margin {
-            margin-top: var(--scaling--32) !important;
-          }
-        }
-
-        @media (max-width: 767px) {
-          .form-margin {
-            margin-top: var(--scaling--48) !important;
-          }
-        }
-      </style>
 
       <div class="w-layout-grid contact-halves">
         <div id="w-node-c6e35a31-fec2-c14b-2c9f-3bc5d2187d67-43f76668" class="contact-left">
@@ -217,7 +187,6 @@
         </div>
 
         <div id="w-node-c6e35a31-fec2-c14b-2c9f-3bc5d2187d6f-43f76668" class="form-contact w-form form-margin">
-          <!-- <h3 style="margin-bottom: 3vh;">Форма обратной связи</h3> -->
 
           <form id="feedback-form" name="feedback-form" data-name="feedback-form" method="post" class="contact-form">
 
@@ -233,7 +202,8 @@
               <div class="contact-input-wrap">
 
                 <div class="label">Мессенджер для связи</div>
-                <select id="field" name="field" data-name="field" required class="text-field select-field w-select">
+                <select id="field" name="field" data-name="field" required class="text-field select-field w-select"
+                  style="-webkit-appearance: none; -moz-appearance: none; appearance: none; color: #333 !important">
                   <option value="1">Telegram</option>
                   <option value="2">WhatsApp</option>
                 </select>
@@ -253,30 +223,32 @@
 
               <div class="label">Тема обращения</div>
               <input class="text-field w-input" type="text" name="topic" minlength="3" maxlength="100" data-name="topic"
-                pattern="^[A-Za-zА-Яа-яЁё\s]*$" placeholder="Вопрос/жалоба/предложение" id="topic" required>
+                pattern="^[A-Za-zА-Яа-яЁё0-9\s.,!?:;'()\[\]\-]*$" placeholder="Вопрос/жалоба/предложение" id="topic"
+                required>
 
             </div>
 
             <div class="contact-input-wrap">
 
               <div class="label">Сообщение</div>
-              <textarea id="message" name="message" maxlength="500" required data-name="message"
-                placeholder="Поделитесь вашими мыслями (не более 500 символов)"
-                class="text-field text-area w-input"></textarea>
-
+              <textarea id="message" name="message" minlength="3" maxlength="500" required data-name="message"
+                placeholder="Поделитесь вашими мыслями" class="text-field text-area w-input"></textarea>
+              <div id="message-counter">
+                <span id="char-count">0 / 500</span>
+              </div>
+            </div>
+            <div class="contact-input-wrap">
+              <div class="w-radio">
+                <input type="checkbox" id="privacy-policy" required class="w-radio-input" name="privacy-policy">
+                <label for="privacy-policy" class="w-form-label">Я соглашаюсь с <a href="/privacy-policy"
+                    target="_blank" class="text-underline" style="color: #121212">политикой
+                    конфиденциальности</a></label>
+              </div>
             </div>
             <div class="contact-submit-wrap">
               <input type="submit" data-wait="Пожалуйста подождите..." class="cta-main w-button" value="Отправить">
             </div>
           </form>
-
-          <div class="success-message w-form-done">
-            <div>Спасибо! Ваше обращение принято!
-            </div>
-          </div>
-          <div class="error-message w-form-fail">
-            <div>Упс, что-то пошло не так при отправке формы!</div>
-          </div>
 
         </div>
       </div>
@@ -290,6 +262,18 @@
   <script src="/js/custom.js" type="text/javascript"></script>
   <script>
     Inputmask("+7 (999) 999-99-99").mask("#phone");
+  </script>
+  <script>
+    // Счетчик символов для textarea
+    document.addEventListener('DOMContentLoaded', function () {
+      var textarea = document.getElementById('message');
+      var counter = document.getElementById('char-count');
+      function updateCounter() {
+        counter.textContent = textarea.value.length + ' / 500';
+      }
+      textarea.addEventListener('input', updateCounter);
+      updateCounter();
+    });
   </script>
 
 </body>
