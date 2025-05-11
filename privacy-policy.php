@@ -354,7 +354,7 @@
   <section class="section cta-section only-mobile">
     <div data-poster-url="/images/vid-2.png" data-video-urls="/media/vid-2.mp4" data-autoplay data-loop
       data-wf-ignore="true" class="cta-video w-background-video w-background-video-atom">
-      <video id="index-cta-section-video" autoplay loop style="background-image: url('/images/vid.png');" muted
+      <video id="index-cta-section-video" autoplay loop style="background-image: url('/images/vid-2.png');" muted
         playsinline data-wf-ignore="true">
         <source src="/media/vid-2.mp4" data-wf-ignore="true">
         <source src="/media/vid-2.webm" data-wf-ignore="true">

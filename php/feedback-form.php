@@ -15,10 +15,11 @@ if (!file_exists($logFile)) {
     exit;
 }
 require_once $autoloadPath;
-require_once $logFile;
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
+
+header('Content-Type: application/json');
 
 function logToTelegramFile($message)
 {
@@ -28,10 +29,37 @@ function logToTelegramFile($message)
     file_put_contents($logFile, $entry, FILE_APPEND | LOCK_EX);
 }
 
-header('Content-Type: application/json');
-
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode(['success' => false, 'message' => 'Неверный метод запроса!']);
+    exit;
+}
+
+function verifyTurnstile($token)
+{
+    $secretKey = $_ENV['TURNSTILE_SECRET_KEY'];
+    $url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+
+    $data = [
+        'secret' => $secretKey,
+        'response' => $token,
+        'remoteip' => $_SERVER['REMOTE_ADDR']
+    ];
+
+    $options = [
+        'http' => [
+            'method' => 'POST',
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+            'content' => http_build_query($data)
+        ]
+    ];
+
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    return json_decode($result)->success ?? false;
+}
+
+if (!isset($_POST['cf-turnstile-response']) || !verifyTurnstile($_POST['cf-turnstile-response'])) {
+    echo json_encode(['success' => false, 'message' => 'Проверка CAPTCHA не пройдена!']);
     exit;
 }
 
@@ -162,7 +190,6 @@ try {
                     logToTelegramFile("❌ Чат {$chatId} ({$chatTitle}) удалён из базы после более 3 ошибок.");
                 }
             }
-            // остальные коды можно просто игнорировать или логировать
         }
 
         // Отправляем уведомление во все оставшиеся чаты об удалении

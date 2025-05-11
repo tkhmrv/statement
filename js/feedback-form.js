@@ -8,10 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     toastIcon.src =
       type === "success" ? "/images/check.webp" : "/images/cross.webp";
     toastText.textContent = message;
-    setTimeout(() => {
-      toast.style.display = "flex";
-      toast.classList.remove("hiding");
-    }, 100);
+
+    toast.style.display = "flex";
+    toast.classList.remove("hiding");
 
     setTimeout(() => {
       toast.classList.add("hiding");

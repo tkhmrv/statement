@@ -40,29 +40,43 @@ document.querySelector('.cookie-accept').addEventListener('click', function (e) 
   document.cookie = "privacyAccepted=true; path=/; max-age=" + (60 * 60 * 24 * 365); // 1 год
 
   setTimeout(() => {
-    document.querySelector('.toast-cookie-fixed').classList.add('hiding');
+    document.querySelector('.cookies-only').classList.add('hiding');
   }, 100);
 
   setTimeout(() => {
-    document.querySelector('.toast-cookie-fixed').style.display = 'none';
+    document.querySelector('.cookies-only').style.display = 'none';
   }, 1000);
+
+  // Показываем уведомление через 10 секунд после скрытия плашки
+  showNotificationWithDelay();
 });
 
-// Проверка на наличие уведомления
-if (document.cookie.indexOf('notificationShowed=true') === -1) {
+// --- НОВАЯ ЛОГИКА УВЕДОМЛЕНИЯ ---
+function setNotificationShowedCookie() {
+  document.cookie = "notificationShowed=true; path=/; max-age=" + (60 * 60 * 24 * 7); // 1 неделя
+}
+
+function showNotificationWithDelay() {
+  // Проверяем, не показывали ли уведомление за последнюю неделю
+  if (document.cookie.indexOf('notificationShowed=true') !== -1) return;
   setTimeout(() => {
-    document.querySelector('.notification-only').style.display = 'flex'; // показать
+    const notif = document.querySelector('.notification-only');
+    notif.style.display = 'flex';
+    setNotificationShowedCookie();
+    // Скрываем уведомление через 10 секунд
+    setTimeout(() => {
+      notif.classList.add('hiding');
+    }, 10000);
+    // Полностью скрываем через 11 секунд
+    setTimeout(() => {
+      notif.style.display = 'none';
+    }, 11000);
   }, 10000);
+}
 
-  setTimeout(() => {
-    document.querySelector('.notification-only').classList.add('hiding');
-  }, 18000);
-
-  setTimeout(() => {
-    document.querySelector('.notification-only').style.display = 'none'; // скрыть
-    document.cookie = "notificationShowed=true; path=/; max-age=" + (60 * 60 * 24 * 7); // 1 неделя
-  }, 20000);
-
+// Логика показа уведомления при загрузке страницы
+if (document.cookie.indexOf('privacyAccepted=true') !== -1) {
+  showNotificationWithDelay();
 } else {
   document.querySelector('.notification-only').style.display = 'none'; // скрыть
 }

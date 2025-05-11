@@ -214,7 +214,7 @@
             <div class="contact-input-wrap">
 
               <div class="label">Телефон</div>
-              <input class="text-field w-input" type="tel" name="phone" required data-name="phone"
+              <input class="text-field w-input" type="tel" name="phone" required data-name="phone" autocomplete="on"
                 placeholder="+7 (999) 123-45-67" id="phone">
 
             </div>
@@ -223,7 +223,7 @@
 
               <div class="label">Тема обращения</div>
               <input class="text-field w-input" type="text" name="topic" minlength="3" maxlength="100" data-name="topic"
-                pattern="^[A-Za-zА-Яа-яЁё0-9\s.,!?:;'()\[\]\-]*$" placeholder="Вопрос/жалоба/предложение" id="topic"
+              ^[A-Za-zА-Яа-яЁё0-9\s.,:;!?-]*$ placeholder="Вопрос/жалоба/предложение" id="topic"
                 required>
 
             </div>
@@ -245,6 +245,12 @@
                     конфиденциальности</a></label>
               </div>
             </div>
+
+            <div class="contact-input-wrap">
+              <!-- Turnstile -->
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAABcdHzI-f5hT0zLF" data-size="flexible" data-theme="light"></div>
+            </div>
+
             <div class="contact-submit-wrap">
               <input type="submit" data-wait="Пожалуйста подождите..." class="cta-main w-button" value="Отправить">
             </div>
@@ -260,6 +266,8 @@
   <script src="/js/jquery-3.5.1.min.js" type="text/javascript" crossorigin="anonymous"></script>
   <script src="/js/untouched.js" type="text/javascript"></script>
   <script src="/js/custom.js" type="text/javascript"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+
   <script>
     Inputmask("+7 (999) 999-99-99").mask("#phone");
   </script>
