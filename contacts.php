@@ -223,8 +223,7 @@
 
               <div class="label">Тема обращения</div>
               <input class="text-field w-input" type="text" name="topic" minlength="3" maxlength="100" data-name="topic"
-              ^[A-Za-zА-Яа-яЁё0-9\s.,:;!?-]*$ placeholder="Вопрос/жалоба/предложение" id="topic"
-                required>
+                ^[A-Za-zА-Яа-яЁё0-9\s.,:;!?-]*$ placeholder="Вопрос/жалоба/предложение" id="topic" required>
 
             </div>
 
@@ -248,7 +247,8 @@
 
             <div class="contact-input-wrap">
               <!-- Turnstile -->
-              <div class="cf-turnstile" data-sitekey="0x4AAAAAABcdHzI-f5hT0zLF" data-size="flexible" data-theme="light"></div>
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAABcdHzI-f5hT0zLF" data-size="flexible" data-theme="light">
+              </div>
             </div>
 
             <div class="contact-submit-wrap">

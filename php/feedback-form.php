@@ -1,6 +1,5 @@
 <?php
 $logFile = __DIR__ . '/../logs/telegram.log';
-require_once __DIR__ . '/../vendor/autoload.php';
 
 $autoloadPath = __DIR__ . '/../vendor/autoload.php';
 if (!file_exists($autoloadPath)) {
@@ -59,7 +58,7 @@ function verifyTurnstile($token)
 }
 
 if (!isset($_POST['cf-turnstile-response']) || !verifyTurnstile($_POST['cf-turnstile-response'])) {
-    echo json_encode(['success' => false, 'message' => 'Проверка CAPTCHA не пройдена!']);
+    echo json_encode(['success' => false, 'message' => 'Проверка Cloudflare Turnstile не пройдена!']);
     exit;
 }
 
@@ -156,6 +155,17 @@ try {
                 'text' => $tgMessage,
                 'parse_mode' => 'HTML'
             ];
+
+            // Получаем актуальное имя чата из Telegram
+            $getChatUrl = "https://api.telegram.org/bot$botToken/getChat?chat_id=$chatId";
+            $chatInfo = @file_get_contents($getChatUrl);
+            $chatInfoData = json_decode($chatInfo, true);
+            $actualTitle = $chatInfoData['result']['title'] ?? null;
+            if ($actualTitle && $actualTitle !== $chatTitle) {
+                // Обновляем имя чата в БД
+                $pdo->prepare("UPDATE TgChats SET ChatTitle = ? WHERE IdTgChat = ?")->execute([$actualTitle, $chatDbId]);
+                $chatTitle = $actualTitle;
+            }
 
             $ch = curl_init($tgApiUrl);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

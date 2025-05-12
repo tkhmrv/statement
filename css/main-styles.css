@@ -7907,8 +7907,8 @@ figcaption {
   }
 
   ._404-image-wrap {
-    width: 40vw;
-    height: 40vw;
+    width: 50vw;
+    height: 50vw;
   }
 
   .contact-info-tile {
@@ -8827,7 +8827,7 @@ figcaption {
 
   ._404-image-wrap {
     width: 100%;
-    height: 30vh;
+    height: 50vh;
   }
 
   .pricing-thirds {

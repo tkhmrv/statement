@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       toast.classList.add("hiding");
       setTimeout(() => {
-        toast.style.display = "none";
         toast.classList.remove("hiding");
+        toast.style.display = "none";
       }, 700);
     }, 4000);
   }
