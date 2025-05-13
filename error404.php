@@ -97,7 +97,7 @@
               </div>
             </div>
             <div data-w-id="9766fcb4-1916-3d52-193e-4faa306f9ed7" class="_404-image-wrap"><img
-                src="/images/6776e44013abdee5d80a6c9b_404.gif" loading="lazy" alt="" class="image-cover parallax"></div>
+                src="/images/404.gif" loading="lazy" alt="" class="image-cover parallax"></div>
           </div>
         </div>
       </div>
