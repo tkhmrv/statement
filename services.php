@@ -154,7 +154,7 @@
                                 <div data-w-id="14fa7253-0121-984e-bf70-fb7b5d207697" class="project-v1-image-wrap"><img
                                         loading="lazy" src="/images/la-maison/la-maison-horizontal.jpg" alt=""
                                         sizes="(max-width: 479px) 100vw, (max-width: 767px) 50vw, 60vw"
-                                        srcset="/images/la-maison/la-maison-horizontal.jpg 500w, /images/la-maison/la-maison-horizontal.jpg 800w, /images/la-maison/la-maison-horizontal.jpg 1080w, /images/la-maison/la-maison-horizontal.jpg1536w"
+                                        srcset="/images/la-maison/la-maison-horizontal.jpg 500w, /images/la-maison/la-maison-horizontal.jpg 800w, /images/la-maison/la-maison-horizontal.jpg 1080w, /images/la-maison/la-maison-horizontal.jpg 1536w"
                                         class="image-cover parallax">
                                     <div style="height:100%" class="mask-image"></div>
                                 </div>
